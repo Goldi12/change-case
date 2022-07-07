@@ -33,8 +33,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-mongoose.connect("mongodb://localhost:27017/expynoseDB");
-
+// mongoose.connect("mongodb://localhost:27017/expynoseDB");
+mongoose.connect("mongodb+srv://admin-goldi:goldigupta12@cluster0.47xcq.mongodb.net/worldData");
 const userSchema = new mongoose.Schema({
   email: String,
   password: String,
@@ -191,17 +191,20 @@ User.register({username: req.body.username}, req.body.password, function(err, us
 })
 
 
+
+
 });
 
 
 
 
+
 let port = process.env.PORT;
-if (port == null || port == "") {
+if (port == null || port == "" ){
   port = 3000;
 }
 
+app.listen(port, function(){
+  console.log("server has started Succeessfully");
 
-app.listen(port, function() {
-  console.log("Server is active");
 });
