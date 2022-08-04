@@ -199,12 +199,19 @@ User.register({username: req.body.username}, req.body.password, function(err, us
 
 
 
-let port = process.env.PORT;
-if (port == null || port == "" ){
-  port = 3000;
-}
+// let port = process.env.PORT;
+// if (port == null || port == "" ){
+//   port = 3000;
+// }
 
-app.listen(port, function(){
-  console.log("server has started Succeessfully");
+// app.listen(port, function(){
+//   console.log("server has started Succeessfully");
 
-});
+// });
+
+
+const PORT = process.env.PORT ||5000;
+ 
+// Executing the server on given port number
+app.listen(PORT, console.log(
+  `Server started on port ${PORT}`));
