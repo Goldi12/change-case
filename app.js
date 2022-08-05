@@ -2,7 +2,7 @@
 // hello world this?//////
 require("dotenv").config()
 const express = require("express");
-const bodyParser = require("body-Parser");
+const bodyParser = require('body-Parser');
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const session = require('express-session');
